@@ -1,0 +1,40 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>삼각형 판별하기</title>
+</head>
+
+
+<!-- 삼각형을 만들기 위해서는 다음의 조건을 만족해야 합니다:
+세 변의 길이는 양의 실수여야 합니다.
+세 변의 길이 중 가장 긴 변의 길이는 나머지 두 변의 길이의 합보다 작아야 합니다. -->
+<body>
+  <script>
+    //별도의 함수를 사용하지 않고 해결하기
+    function solution(a, b, c) {
+      let max;
+      let sum = a + b + c;
+      if (a > b) max = a;
+      else max = b;
+      if (c > max) max = c;
+      if ((sum - max) <= max) return 'NO'
+
+      return 'YES'
+    }
+    console.log('solution :', solution(13, 33, 17));
+
+    //Math.max 사용한 로직
+    function solution2(a, b, c) {
+      let sum = a + b + c;
+      let max = Math.max(a, b, c);
+      if ((sum - max) <= max) return 'NO'
+
+      return 'YES'
+    }
+
+    console.log('solution2 :', solution2(13, 33, 17));
+  </script>
+</body>
+
+</html>
