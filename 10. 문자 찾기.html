@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<!-- 특정 문자열을 입력, 입력받은 문자의 개수를 찾아내기 -->
+
+<body>
+  <script>
+    let str = "COMPUTERPROGRAMMING";
+    function solution(str, word) {
+      let answer = 0;
+      for (let x of str) {
+        if (x === word) answer++;
+      }
+      return answer;
+    }
+
+    function solution2(str, word) {
+      let answer = str.split(word).length -1;
+      return answer;
+    }
+    console.log(solution(str, 'C'));
+
+  </script>
+</body>
+
+</html>
