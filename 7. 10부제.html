@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<!-- 자동차 번호의 일의자리 숫자, 날짜의 일의 자리 숫자가 일치하면
+해당일의 운행이 금지됩니다. 이를 위반하는 차량의 대수를 출력하는 프로그램
+자동차 번호의 일의자리가 0일경우, 10, 20, 30일 운행금지
+(날짜, 배열)
+-->
+
+<body>
+  <script>
+    let arr = [25, 23, 11, 47, 53, 17, 33];
+    let arr2 = [12, 20, 54, 30, 87, 91, 30];
+    function solution(day, arr) {
+      let answer = 0;
+      for (const item of arr) {
+        if ((item % 10 === day) || (day === 0 && item % 10 === 0)) answer++;
+      }
+      return answer;
+    }
+
+    console.log(solution(3, arr));
+    console.log(solution(0, arr2));
+  </script>
+</body>
+
+</html>
