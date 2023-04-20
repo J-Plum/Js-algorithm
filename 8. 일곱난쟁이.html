@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<!-- 9명의 사람들중 7명을 찾아야 하며, 7명 키의 총합이 100이다 -->
+
+<body>
+  <script>
+    let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+    let sum = 0;
+    function solution(arr) {
+      let answer = arr;
+      sum = arr.reduce((acc, cur) => acc + cur);
+      for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+          if ((sum - (arr[i] + arr[j])) === 100) {
+            answer = answer.filter(el => el !== arr[i] && el !== arr[j]);
+          }
+        }
+      }
+      return answer;
+    }
+    function solution2(arr) {
+      let answer = arr;
+      sum = arr.reduce((acc, cur) => acc + cur);
+      for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+          if ((sum - (arr[i] + arr[j])) === 100) {
+            arr.splice(j,1);
+            arr.splice(i,1);
+          }
+        }
+      }
+      return answer;
+    }
+
+    console.log(solution(arr));
+  </script>
+</body>
+
+</html>
