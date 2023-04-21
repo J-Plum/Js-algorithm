@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<!-- 대문자로 변환하기 -->
+<body>
+  <script>
+    let str = "ItisTimeToStudy";
+
+    function solution(str) {
+      let answer = "";
+      for (let word of str) {
+        if (word.charCodeAt() >= 97 && word.charCodeAt() <= 125) answer += word.toUpperCase();
+        else answer += word
+      }
+      return answer;
+    }
+
+    function solution2(str) {
+      let answer = "";
+      for (let word of str) {
+        if (/[a-z]/i.test(word)) {
+          answer += word.toUpperCase();
+        } else {
+          answer += word;
+        }
+      }
+      return answer;
+    }
+
+    console.log(solution2(str));
+  </script>
+</body>
+
+</html>
