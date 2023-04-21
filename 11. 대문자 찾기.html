@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+<!-- 대문자 찾기 -->
+
+<body>
+  <script>
+    let str = "KoreaTimeGood";
+    function solution(str) {
+      let answer = 0;
+      for (let word of str) {
+        if (word.charCodeAt() >= 65 && word.charCodeAt() <= 90)  answer++;
+      }
+      return answer;
+    }
+
+    function solution2(str) {
+        return str.match(/[A-Z]/g).length;
+      }
+
+    console.log(solution2(str));
+  </script>
+</body>
+
+</html>
