@@ -20,7 +20,15 @@
       return answer;
     }
 
-    console.log(solution("StuDY"));
+    function solution2(str) {
+      let answer = '';
+      const arr = str.split('');
+      answer = arr.map(char=> char===char.toUpperCase()? char.toLowerCase() : char.toUpperCase())
+
+      return answer.join('');
+    }
+
+    console.log(solution2("StuDY"));
   </script>
 </body>
 
