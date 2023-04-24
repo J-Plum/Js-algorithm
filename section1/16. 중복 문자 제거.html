@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution(str) {
+      let arr = str.split('');
+      let set = new Set();
+      arr.forEach(e => {
+        if (!set.has(e)) {
+          set.add(e);
+        }
+      })
+      return Array.from(set).join('');
+    }
+
+    function solution2(str) {
+      const obj = {};
+      let result = '';
+
+      for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+        if (!obj[char]) {
+          obj[char] = true;
+          result += char;
+        }
+      }
+
+      return result;
+    }
+
+
+    console.log(solution("apple"));
+    console.log(solution("banana"));
+    console.log(solution("asdasd"));
+    console.log('----------------------')
+    console.log(solution2("apple"));
+    console.log(solution2("banana"));
+    console.log(solution2("asdasd"));
+  </script>
+</body>
+
+</html>
