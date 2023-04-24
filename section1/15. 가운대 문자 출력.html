@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<!-- 문자열의 가운대 문자를 출력합니다.
+짝수의 문자일경우 가운대 2개의 문자를 출력합니다. -->
+
+<body>
+  <script>
+    function solution(str) {
+      let answer = "";
+      const len = str.length;
+      const mid = Math.floor(len / 2);
+      if (str.length === 0) {
+        answer = "입력된 문자열이 없습니다.";
+      } else if (len % 2 === 0) {
+        answer = str[mid- 1] + str[mid];
+      } else {
+        answer = str[Math.floor(mid)];
+      }
+      return answer;
+    }
+
+    function solution2(str) {
+      const len = str.length;
+      const mid = Math.floor(len / 2);
+      if (len % 2 === 0) {
+        return str.slice(mid - 1, mid + 1);
+      } else {
+        return str[mid];
+      }
+    }
+
+    console.log(solution("good"));
+    console.log(solution("study"));
+
+  </script>
+</body>
+
+</html>
