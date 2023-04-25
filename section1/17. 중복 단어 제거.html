@@ -1,0 +1,32 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<!-- N개의 문자열이 입력되면 중복된 문자열은 제거. (원래의 입력순서를 유지). -->
+
+<body>
+  <script>
+    let arr = ["good", "time", "good", "time", "student"];
+    function solution(arr) {
+      let set = new Set(arr)
+      return [...set];
+    }
+
+    function solution2(arr) {
+      const set = new Set();
+      arr.forEach(el => set.add(el));
+      return [...set];
+    }
+
+    function solution3(arr) {
+      let answer = arr.filter((el, i) => arr.indexOf(el) === i)
+      return answer;
+    }
+    console.log(solution(arr));
+  </script>
+</body>
+
+</html>
