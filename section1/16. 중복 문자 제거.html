@@ -9,12 +9,7 @@
   <script>
     function solution(str) {
       let arr = str.split('');
-      let set = new Set();
-      arr.forEach(e => {
-        if (!set.has(e)) {
-          set.add(e);
-        }
-      })
+      let set = new Set(arr);
       return Array.from(set).join('');
     }
 
