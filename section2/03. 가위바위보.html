@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+
+<!-- 가위 = 1 , 바위 = 2 , 보 = 3 -->
+<!-- 승리시 A or B, 비기는 경우 D -->
+
+<body>
+    <script>
+        let a = [2, 3, 3, 1, 3];
+        let b = [1, 1, 2, 2, 3];
+
+        function solution(a, b) {
+            let answer = "";
+            for (let i = 0; i < a.length; i++) {
+                if (a[i] === b[i]) answer += 'D '
+                else if ((a[i] === 1) && (b[i] === 3)) answer += 'A '
+                else if ((a[i] === 2) && (b[i] === 1)) answer += 'A '
+                else if ((a[i] === 3) && (b[i] === 2)) answer += 'A '
+                else answer += 'B '
+            }
+            return answer;
+        }
+
+        function solution2(a, b) {
+            const result = a.map((e, i) => {
+                if (e === b[i]) {
+                    return 'D';
+                }
+                switch (value) {
+                    case 1:
+                        switch (b[index]) {
+                            case 3:
+                                return 'A';
+                            case 2:
+                                return 'B';
+                            default:
+                                return '';
+                        }
+                    case 2:
+                        switch (b[index]) {
+                            case 3:
+                                return 'B';
+                            case 1:
+                                return 'A';
+                            default:
+                                return '';
+                        }
+                    case 3:
+                        switch (b[index]) {
+                            case 1:
+                                return 'B';
+                            case 2:
+                                return 'A';
+                            default:
+                                return '';
+                        }
+                    default:
+                        return '';
+                }
+            });
+            return result.join(' ');
+        }
+
+
+        console.log(solution2(a, b));
+    </script>
+</body>
+
+</html>
