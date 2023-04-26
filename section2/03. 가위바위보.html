@@ -10,26 +10,35 @@
 
 <body>
     <script>
-        let a = [2, 3, 3, 1, 3];
-        let b = [1, 1, 2, 2, 3];
-
-        function solution(a, b) {
-            let answer = "";
-            for (let i = 0; i < a.length; i++) {
-                if (a[i] === b[i]) answer += 'D '
-                else if ((a[i] === 1) && (b[i] === 3)) answer += 'A '
-                else if ((a[i] === 2) && (b[i] === 1)) answer += 'A '
-                else if ((a[i] === 3) && (b[i] === 2)) answer += 'A '
-                else answer += 'B '
-            }
-            return answer;
-        }
 
         const HandType = {
             ROCK: 1,
             SCISSORS: 2,
             PAPER: 3
         };
+
+        const Result = {
+            DRAW: 'D',
+            PLAYER_A: 'A',
+            PLAYER_B: 'B'
+        };
+
+        let a = [2, 3, 3, 1, 3];
+        let b = [1, 1, 2, 2, 3];
+
+        function solution(a, b) {
+            let answer = "";
+            for (let i = 0; i < a.length; i++) {
+                if (a[i] === b[i]) answer += Result.DRAW + " ";
+                else if ((a[i] === 1) && (b[i] === 3)) answer += Result.PLAYER_A + " ";
+                else if ((a[i] === 2) && (b[i] === 1)) answer += Result.PLAYER_A + " ";
+                else if ((a[i] === 3) && (b[i] === 2)) answer += Result.PLAYER_A + " ";
+                else answer += Result.PLAYER_B + ' ';
+            }
+            return answer;
+        }
+
+
 
         function solution2(a, b) {
             const result = a.map((value, index) => {
@@ -40,27 +49,27 @@
                     case HandType.ROCK:
                         switch (b[index]) {
                             case 3:
-                                return 'A';
+                                return Result.PLAYER_A;
                             case 2:
-                                return 'B';
+                                return Result.PLAYER_B;
                             default:
                                 return '';
                         }
                     case HandType.SCISSORS:
                         switch (b[index]) {
                             case 3:
-                                return 'B';
+                                return Result.PLAYER_B;
                             case 1:
-                                return 'A';
+                                return Result.PLAYER_A;
                             default:
                                 return '';
                         }
                     case HandType.PAPER:
                         switch (b[index]) {
                             case 1:
-                                return 'B';
+                                return Result.PLAYER_B;
                             case 2:
-                                return 'A';
+                                return Result.PLAYER_A;
                             default:
                                 return '';
                         }
@@ -72,7 +81,7 @@
         }
 
 
-        console.log(solution2(a, b));
+        console.log(solution(a, b));
     </script>
 </body>
 
