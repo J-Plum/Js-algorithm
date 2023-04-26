@@ -43,7 +43,7 @@
         function solution2(a, b) {
             const result = a.map((value, index) => {
                 if (value === b[index]) {
-                    return 'D';
+                    return Result.DRAW;
                 }
                 switch (value) {
                     case HandType.ROCK:
