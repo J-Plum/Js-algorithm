@@ -25,13 +25,19 @@
             return answer;
         }
 
+        const HandType = {
+            ROCK: 1,
+            SCISSORS: 2,
+            PAPER: 3
+        };
+
         function solution2(a, b) {
-            const result = a.map((e, i) => {
-                if (e === b[i]) {
+            const result = a.map((value, index) => {
+                if (value === b[index]) {
                     return 'D';
                 }
                 switch (value) {
-                    case 1:
+                    case HandType.ROCK:
                         switch (b[index]) {
                             case 3:
                                 return 'A';
@@ -40,7 +46,7 @@
                             default:
                                 return '';
                         }
-                    case 2:
+                    case HandType.SCISSORS:
                         switch (b[index]) {
                             case 3:
                                 return 'B';
@@ -49,7 +55,7 @@
                             default:
                                 return '';
                         }
-                    case 3:
+                    case HandType.PAPER:
                         switch (b[index]) {
                             case 1:
                                 return 'B';
